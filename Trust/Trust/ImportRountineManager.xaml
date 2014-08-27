@@ -1,0 +1,78 @@
+﻿<Page x:Class="Trust.ImportRountineManager"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="ImportRountineManager" Height="1000" Width="1298" Loaded="Window_Loaded">
+    <Grid Height="1000" Width="1236">
+        <TabControl Height="827" HorizontalAlignment="Left" Margin="21,21,0,0" Name="tabControl1" VerticalAlignment="Top" Width="1203">
+            <TabItem Header="Current Mappings" Name="tabItem1">
+                <Grid Width="1196">
+                <DataGrid Height="181"  IsReadOnly="True" CanUserAddRows="false" HorizontalAlignment="Left"  Margin="6,51,0,0" Name="dgHeaders" VerticalAlignment="Top" Width="762" AutoGenerateColumns="False" MouseDoubleClick="dgHeaders_MouseDoubleClick">
+                        <DataGrid.Columns>
+                        <DataGridTextColumn Header="ID" Binding="{Binding Path=Id,  Mode=OneTime}"></DataGridTextColumn>
+                        <DataGridTextColumn Header="Type" Width="100" Binding="{Binding Path=Type, Mode=OneTime}"></DataGridTextColumn>
+                        <DataGridTextColumn Header="Tab Name" Binding="{Binding Path=TabName}"></DataGridTextColumn>
+                        <DataGridTextColumn Header="Deliminator" Binding="{Binding Path=deliminator}"></DataGridTextColumn>
+                        <DataGridTextColumn Header="Import To Table" Width="150"  Binding="{Binding Path=ImportToTable}"></DataGridTextColumn>
+                        <DataGridTextColumn Header="Rountine Name" Width="150" Binding="{Binding Path=Name}"></DataGridTextColumn>
+                        <DataGridTextColumn Header="Import Reader" Width="135"  Binding="{Binding Path=ClassName}"></DataGridTextColumn>
+                            
+                        <DataGridTemplateColumn Header="Delete">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                    <Button Content="Delete" x:Name="btnDelete"
+                                Click="btnDelete_Click"></Button>
+                                </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
+                    <DataGrid AutoGenerateColumns="False" CanUserAddRows="False" Height="408" HorizontalAlignment="Left" Margin="811,95,0,0" Name="dgMappings" VerticalAlignment="Top" Width="327">
+                        <DataGrid.Columns>
+                             <DataGridTextColumn Header="Field" Width="230" IsReadOnly="True" Binding="{Binding Path=Alais,  Mode=OneTime}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Column No" Binding="{Binding Path=Column}"></DataGridTextColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                    <Label Content="Current import routines - double click to edit" Height="28" HorizontalAlignment="Left" Margin="6,30,0,0" Name="label9" VerticalAlignment="Top" />
+                    <Label Content="Field Mappings For Selected Rountine. " Height="28" HorizontalAlignment="Left" Margin="811,30,0,0" Name="label10" VerticalAlignment="Top" />
+                    <Button Content="Save" Height="23" HorizontalAlignment="Left" Margin="1063,508,0,0" Name="butSaveMapping" VerticalAlignment="Top" Width="75" Click="butSaveMapping_Click" />
+                    <Label Content="Set to 0 if not applicable." TextElement.FontStyle="Italic" Height="28" HorizontalAlignment="Left" Margin="1016,30,0,0" Name="label11" VerticalAlignment="Top" />
+                    <Label Content="Any value pairs must be in sequential columns - for example Hauler Type and Haulier Description must be next to each other with the code first."   Height="46" HorizontalAlignment="Left" Margin="811,51,0,0" Name="label12" VerticalAlignment="Top" />
+                </Grid>
+            </TabItem>
+            <TabItem Header="Create New Mappings" Name="tabItem12">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="28*" />
+                        <ColumnDefinition Width="55" />
+                        <ColumnDefinition Width="691*" />
+                    </Grid.ColumnDefinitions>
+                    <Label Content="Name of Routine" Height="23" HorizontalAlignment="Left" Margin="6,6,0,0" Name="label1" VerticalAlignment="Top" Width="100" Grid.ColumnSpan="3" />
+                    <TextBox x:Name="txtName" Margin="29,8,813,767" Grid.Column="2" />
+                    <ComboBox Name="cbInputFormat" Margin="29,35,813,738" Grid.Column="2">
+                        <ComboBoxItem Name="excel">Excel</ComboBoxItem>
+                    </ComboBox>
+                    <Label Content="File Type" Height="23" HorizontalAlignment="Left" Margin="6,35,0,0" Name="label2" VerticalAlignment="Top" Width="100" Grid.ColumnSpan="3" />
+                    <Label Content="Deliminator " Height="23" HorizontalAlignment="Left" Margin="6,64,0,0" Name="label3" VerticalAlignment="Top" Width="100" Grid.ColumnSpan="3" />
+                    <TextBox Margin="29,66,930,709" Name="txtDeliminator" Grid.Column="2" />
+                    <Label Content="Only complete for csv" Height="23" HorizontalAlignment="Left" Margin="169,66,0,0" Name="label4" VerticalAlignment="Top" Width="172" Grid.Column="2" />
+                    <ComboBox Margin="29,95,813,678" Name="cbTable" Grid.Column="2">
+                        <ComboBoxItem Name="purchase_orders">Purchase Orders</ComboBoxItem>
+                        <ComboBoxItem Name="invoices">Invoices</ComboBoxItem>
+                        <ComboBoxItem Name="lookup_table">Lookup Table</ComboBoxItem>
+                    </ComboBox>
+                    <Label Content="Document Type" Height="23" HorizontalAlignment="Left" Margin="6,95,0,0" Name="label5" VerticalAlignment="Top" Width="100" Grid.ColumnSpan="3" />
+                    <Label Content="Tab Name" Height="23" HorizontalAlignment="Left" Margin="6,122,0,0" Name="label6" VerticalAlignment="Top" Width="100" Grid.ColumnSpan="3" />
+                    <TextBox Margin="29,124,813,651" Name="txtTabName" Grid.Column="2" />
+                    <Label Content="Only for excel - the tab name the data is in" Height="23" HorizontalAlignment="Left" Margin="285,122,0,0" Name="label7" VerticalAlignment="Top" Width="224" Grid.Column="2" />
+                    <Button Content="Add" Height="23" HorizontalAlignment="Left" Margin="204,192,0,0" Name="butAdd" VerticalAlignment="Top" Width="75" Click="butAdd_Click" Grid.Column="2" />
+                    <ComboBox Margin="28,150,813,623" Name="cbImportClass" Grid.Column="2">
+                        <ComboBoxItem Name="PurchaseOrderExcelImport">Excel Purchase Orders</ComboBoxItem>
+                        <ComboBoxItem Name="LangdonsInvoice">Langdons Invoices</ComboBoxItem>
+                        <ComboBoxItem Name="LangdonsLookup">Langdons Lookup Table</ComboBoxItem>
+                    </ComboBox>
+                    <Label Content="Import Reader" Grid.ColumnSpan="3" Height="23" HorizontalAlignment="Left" Margin="6,150,0,0" Name="label8" VerticalAlignment="Top" Width="100" />
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Page>

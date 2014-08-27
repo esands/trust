@@ -1,0 +1,980 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{CE97BF22-6408-4E8F-8A17-D1472DEF5719}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Trust</RootNamespace>
+    <AssemblyName>Trust</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>C:\Users\Matt Chick\Dropbox\Yeo Valley\trust\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <WebPage>publish.htm</WebPage>
+    <AutorunEnabled>true</AutorunEnabled>
+    <ApplicationRevision>13</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>
+    </DocumentationFile>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>2B8CB8F0DC26C97C50222B540D7869540D83D120</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>Trust_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ExtendedGrid">
+      <HintPath>..\..\..\..\Downloads\WpfControlKit\ExtendedGrid.dll</HintPath>
+    </Reference>
+    <Reference Include="Fluent">
+      <HintPath>..\..\..\..\Downloads\WpfControlKit\Fluent.dll</HintPath>
+    </Reference>
+    <Reference Include="ImagePackage">
+      <HintPath>..\..\..\..\Downloads\WpfControlKit\ImagePackage.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Windows.Shell, Version=3.5.41019.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="MultiEventCommandBinder">
+      <HintPath>..\..\..\..\Downloads\WpfControlKit\MultiEventCommandBinder.dll</HintPath>
+    </Reference>
+    <Reference Include="RibbonControlsLibrary, Version=4.0.0.11019, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\Microsoft Ribbon for WPF\V4.0\RibbonControlsLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Bll\ExportOrder.cs" />
+    <Compile Include="Bll\AlaisField.cs" />
+    <Compile Include="Bll\Helpers\ColumnOrder.cs" />
+    <Compile Include="Bll\MatchResultReport.cs" />
+    <Compile Include="Bll\MatchResult.cs" />
+    <Compile Include="Bll\Invoice.cs" />
+    <Compile Include="Bll\HaulierType.cs" />
+    <Compile Include="Bll\Haulier.cs" />
+    <Compile Include="Bll\Depot.cs" />
+    <Compile Include="Bll\Customer.cs" />
+    <Compile Include="Bll\ImportProcessors\ExcelProcessor.cs" />
+    <Compile Include="Bll\ImportProcessors\ImportBase.cs" />
+    <Compile Include="Bll\ImportProcessors\IImportProcess.cs" />
+    <Compile Include="Bll\ImportProcessors\Invoice.cs" />
+    <Compile Include="Bll\ImportProcessors\LangdonsLookup.cs" />
+    <Compile Include="Bll\ImportProcessors\PurchaseOrder.cs" />
+    <Compile Include="Bll\LookupTable.cs" />
+    <Compile Include="Bll\MatchProcessor.cs" />
+    <Compile Include="Bll\PurchaseOrder.cs" />
+    <Compile Include="Bll\PurchaseOrderAmendmentLog.cs" />
+    <Compile Include="Bll\PurchaseOrderAmendment.cs" />
+    <Compile Include="Dal\Alais.cs" />
+    <Compile Include="Dal\LookupTable.cs" />
+    <Compile Include="Dal\MatchingResultsReport.cs" />
+    <Compile Include="Dal\PurchaseOrder.cs" />
+    <Compile Include="Dal\MatchingResults.cs" />
+    <Compile Include="Dal\Customer.cs" />
+    <Compile Include="Dal\Depot.cs" />
+    <Compile Include="Dal\HaulierType.cs" />
+    <Compile Include="Dal\Haulier.cs" />
+    <Compile Include="Dal\ImportBase.cs" />
+    <Compile Include="Bll\ImportField.cs" />
+    <Compile Include="Bll\ImportHeader.cs" />
+    <Compile Include="Bll\ImportRoutine.cs" />
+    <Compile Include="Dal\ImportError.cs" />
+    <Compile Include="Dal\ImportFields.cs" />
+    <Compile Include="Dal\dalbase.cs" />
+    <Compile Include="Dal\ImportHeader.cs" />
+    <Compile Include="Dal\PurchaseOrderAdmendmentLog.cs" />
+    <Compile Include="Dal\PurchaseOrderAdmendment.cs" />
+    <Compile Include="Enums\FileType.cs" />
+    <Compile Include="Enums\ImportType.cs" />
+    <Compile Include="ImportRountineManager.xaml.cs">
+      <DependentUpon>ImportRountineManager.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Dal\Invoice.cs" />
+    <Compile Include="LookupTables.xaml.cs">
+      <DependentUpon>LookupTables.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Match.xaml.cs">
+      <DependentUpon>Match.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Amendments.xaml.cs">
+      <DependentUpon>Amendments.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MatchingManager.xaml.cs">
+      <DependentUpon>MatchingManager.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Reports.xaml.cs">
+      <DependentUpon>Reports.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Settings.cs" />
+    <Compile Include="ColumnOrder.xaml.cs">
+      <DependentUpon>ColumnOrder.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TableAlais.xaml.cs">
+      <DependentUpon>TableAlais.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Import.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ImportRountineManager.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Bll\alais.cs" />
+    <Compile Include="Dal\ExportOrder.cs" />
+    <Compile Include="Import.xaml.cs">
+      <DependentUpon>Import.xaml</DependentUpon>
+    </Compile>
+    <Page Include="LookupTables.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Match.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Options.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Amendments.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MatchingManager.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Reports.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ColumnOrder.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="TableAlais.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Options.xaml.cs">
+      <DependentUpon>Options.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+    <None Include="Trust_TemporaryKey.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="ADODB">
+      <Guid>{EF53050B-882E-4776-B643-EDA472E8E3F2}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>7</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>7</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Excel">
+      <Guid>{00020813-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>7</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="MSDASC">
+      <Guid>{2206CEB0-19C1-11D1-89E0-00C04FD7A829}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0,Profile=Client">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 Client Profile %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.4.5">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 4.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\009_HighPriority_128x128_72.png" />
+    <Resource Include="Images\009_HighPriority_16x16_72.png" />
+    <Resource Include="Images\009_HighPriority_24x24_72.png" />
+    <Resource Include="Images\009_HighPriority_32x32_72.png" />
+    <Resource Include="Images\009_HighPriority_32x42_72.png" />
+    <Resource Include="Images\009_HighPriority_48x48_72.png" />
+    <Resource Include="Images\010_LowPriority_128x128_72.png" />
+    <Resource Include="Images\010_LowPriority_16x16_72.png" />
+    <Resource Include="Images\010_LowPriority_24x24_72.png" />
+    <Resource Include="Images\010_LowPriority_32x32_72.png" />
+    <Resource Include="Images\010_LowPriority_32x42_72.png" />
+    <Resource Include="Images\010_LowPriority_48x48_72.png" />
+    <Resource Include="Images\109_AllAnnotations_Complete_16x16_72.png" />
+    <Resource Include="Images\109_AllAnnotations_Complete_24x24_72.png" />
+    <Resource Include="Images\109_AllAnnotations_Complete_32x32_72.png" />
+    <Resource Include="Images\109_AllAnnotations_Complete_32x42_72.png" />
+    <Resource Include="Images\109_AllAnnotations_Complete_48x48_72.png" />
+    <Resource Include="Images\109_AllAnnotations_Default_16x16_72.png" />
+    <Resource Include="Images\109_AllAnnotations_Default_24x24_72.png" />
+    <Resource Include="Images\109_AllAnnotations_Default_32x32_72.png" />
+    <Resource Include="Images\109_AllAnnotations_Default_32x42_72.png" />
+    <Resource Include="Images\109_AllAnnotations_Default_48x48_72.png" />
+    <Resource Include="Images\109_AllAnnotations_donotenter.png" />
+    <Resource Include="Images\109_AllAnnotations_Error_16x16_72.png" />
+    <Resource Include="Images\109_AllAnnotations_Error_24x24_72.png" />
+    <Resource Include="Images\109_AllAnnotations_Error_256x256.png" />
+    <Resource Include="Images\109_AllAnnotations_Error_32x32_72.png" />
+    <Resource Include="Images\109_AllAnnotations_Error_32x42_72.png" />
+    <Resource Include="Images\109_AllAnnotations_Error_48x48_72.png" />
+    <Resource Include="Images\109_AllAnnotations_Error_64x64_72.png" />
+    <Resource Include="Images\109_AllAnnotations_Help_16x16_72.png" />
+    <Resource Include="Images\109_AllAnnotations_Help_24x24_72.png" />
+    <Resource Include="Images\109_AllAnnotations_Help_256x256.png" />
+    <Resource Include="Images\109_AllAnnotations_Help_32x32_72.png" />
+    <Resource Include="Images\109_AllAnnotations_Help_32x42_72.png" />
+    <Resource Include="Images\109_AllAnnotations_Help_48x48_72.png" />
+    <Resource Include="Images\109_AllAnnotations_Info_16x16_72.png" />
+    <Resource Include="Images\109_AllAnnotations_Info_24x24_72.png" />
+    <Resource Include="Images\109_AllAnnotations_Info_256.png" />
+    <Resource Include="Images\109_AllAnnotations_Info_32x32_72.png" />
+    <Resource Include="Images\109_AllAnnotations_Info_32x42_72.png" />
+    <Resource Include="Images\109_AllAnnotations_Info_48x48_72.png" />
+    <Resource Include="Images\109_AllAnnotations_RedWarning_256.png" />
+    <Resource Include="Images\109_AllAnnotations_Warning_16x16_72.png" />
+    <Resource Include="Images\109_AllAnnotations_Warning_24x24_72.png" />
+    <Resource Include="Images\109_AllAnnotations_Warning_256.png" />
+    <Resource Include="Images\109_AllAnnotations_Warning_32x32_72.png" />
+    <Resource Include="Images\109_AllAnnotations_Warning_32x42_72.png" />
+    <Resource Include="Images\109_AllAnnotations_Warning_48x48_72.png" />
+    <Resource Include="Images\112_Tick_Blue_32x32_72.png" />
+    <Resource Include="Images\112_Tick_Green_32x32_72.png" />
+    <Resource Include="Images\112_Tick_Green_64x64_72.png" />
+    <Resource Include="Images\112_Tick_Grey_32x32_72.png" />
+    <Resource Include="Images\112_Tick_Orange_32x32_72.png" />
+    <Resource Include="Images\1385_Disable_16x16_72.png" />
+    <Resource Include="Images\1385_Disable_24x24_72.png" />
+    <Resource Include="Images\1508_QuestionMarkRed.png" />
+    <Resource Include="Images\1565_QuestionMarkBlue.png" />
+    <Resource Include="Images\Overlay_Audio.png" />
+    <Resource Include="Images\Overlay_Share_16.png" />
+    <Resource Include="Images\Overlay_Share_256.png" />
+    <Resource Include="Images\Overlay_Share_32.png" />
+    <Resource Include="Images\Overlay_Share_48.png" />
+    <Resource Include="Images\PendingRequest_12x10_72.png" />
+    <Resource Include="Images\PendingRequest_22x22_72.png" />
+    <Resource Include="Images\PendingRequest_24x24_72.png" />
+    <Resource Include="Images\PendingRequest_28x28_72.png" />
+    <Resource Include="Images\PendingRequest_32x32_72.png" />
+    <Resource Include="Images\PendingRequest_48x48_72.png" />
+    <Resource Include="Images\PendingRequest_64x64_72.png" />
+    <Resource Include="Images\pending_request_16x16_72.png" />
+    <Resource Include="Images\007_PrintView_128x128_72.png" />
+    <Resource Include="Images\007_PrintView_16x16_72.png" />
+    <Resource Include="Images\007_PrintView_24x24_72.png" />
+    <Resource Include="Images\007_PrintView_32x32_72.png" />
+    <Resource Include="Images\007_PrintView_32x42_72.png" />
+    <Resource Include="Images\007_PrintView_48x48_72.png" />
+    <Resource Include="Images\037_Colorize_16x16_72.png" />
+    <Resource Include="Images\037_Colorize_24x24_72.png" />
+    <Resource Include="Images\037_Colorize_32x32_72.png" />
+    <Resource Include="Images\037_Colorize_32x42_72.png" />
+    <Resource Include="Images\037_Colorize_48x48_72.png" />
+    <Resource Include="Images\037_Colorize_64x64_72.png" />
+    <Resource Include="Images\041_Sort_16x16_72.png" />
+    <Resource Include="Images\041_Sort_24x24_72.png" />
+    <Resource Include="Images\041_Sort_32x32_72.png" />
+    <Resource Include="Images\041_Sort_32x42_72.png" />
+    <Resource Include="Images\041_Sort_48x48_72.png" />
+    <Resource Include="Images\042b_AddCategory_16x16_72.png" />
+    <Resource Include="Images\042b_AddCategory_24x24_72.png" />
+    <Resource Include="Images\042b_AddCategory_32x32_72.png" />
+    <Resource Include="Images\042b_AddCategory_32x42_72.png" />
+    <Resource Include="Images\042b_AddCategory_48x48_72.png" />
+    <Resource Include="Images\042b_AddCategory_64x64_72.png" />
+    <Resource Include="Images\075b_UpFolder_16x16_72.png" />
+    <Resource Include="Images\075b_UpFolder_24x24_72.png" />
+    <Resource Include="Images\075b_UpFolder_32x32_72.png" />
+    <Resource Include="Images\075b_UpFolder_32x42_72.png" />
+    <Resource Include="Images\075b_UpFolder_48x48_72.png" />
+    <Resource Include="Images\075b_UpFolder_64x64_72.png" />
+    <Resource Include="Images\077_AddFile_16x16_72.png" />
+    <Resource Include="Images\077_AddFile_24x24_72.png" />
+    <Resource Include="Images\077_AddFile_32x32_72.png" />
+    <Resource Include="Images\077_AddFile_32x42_72.png" />
+    <Resource Include="Images\077_AddFile_48x48_72.png" />
+    <Resource Include="Images\112_ArrowReturnLeft_Blue_16x16_72.png" />
+    <Resource Include="Images\112_ArrowReturnLeft_Blue_24x24_72.png" />
+    <Resource Include="Images\112_ArrowReturnLeft_Blue_32x32_72.png" />
+    <Resource Include="Images\112_ArrowReturnLeft_Blue_32x42_72.png" />
+    <Resource Include="Images\112_ArrowReturnLeft_Blue_48x48_72.png" />
+    <Resource Include="Images\112_ArrowReturnRight_Blue_16x16_72.png" />
+    <Resource Include="Images\112_ArrowReturnRight_Blue_24x24_72 %282%29.png" />
+    <Resource Include="Images\112_ArrowReturnRight_Blue_32x32_72.png" />
+    <Resource Include="Images\112_ArrowReturnRight_Blue_32x42_72.png" />
+    <Resource Include="Images\112_ArrowReturnRight_Blue_48x48_72.png" />
+    <Resource Include="Images\112_RefreshArrow_Blue_16x16_72.png" />
+    <Resource Include="Images\112_RefreshArrow_Blue_24x24_72.png" />
+    <Resource Include="Images\112_RefreshArrow_Blue_32x32.png" />
+    <Resource Include="Images\112_RefreshArrow_Blue_32x32_72.png" />
+    <Resource Include="Images\112_RefreshArrow_Blue_32x42_72.png" />
+    <Resource Include="Images\112_RefreshArrow_Blue_48x48_72.png" />
+    <Resource Include="Images\112_RefreshArrow_Green_16x16_72.png" />
+    <Resource Include="Images\112_RefreshArrow_Green_24x24_72.png" />
+    <Resource Include="Images\112_RefreshArrow_Green_32x32_72.png" />
+    <Resource Include="Images\112_RefreshArrow_Green_32x42_72.png" />
+    <Resource Include="Images\112_RefreshArrow_Green_48x48_72.png" />
+    <Resource Include="Images\125_FullView_16x16_72.png" />
+    <Resource Include="Images\125_FullView_24x24_72.png" />
+    <Resource Include="Images\125_FullView_32x32_72.png" />
+    <Resource Include="Images\125_FullView_32x42_72.png" />
+    <Resource Include="Images\125_FullView_48x48_72.png" />
+    <Resource Include="Images\126_Edit_16x16_72.png" />
+    <Resource Include="Images\126_Edit_24x24_72.png" />
+    <Resource Include="Images\126_Edit_32x32_72.png" />
+    <Resource Include="Images\126_Edit_32x42_72.png" />
+    <Resource Include="Images\126_Edit_48x48_72.png" />
+    <Resource Include="Images\157_GetPermission_16x16_72.png" />
+    <Resource Include="Images\157_GetPermission_24x24_72.png" />
+    <Resource Include="Images\157_GetPermission_32x32_72.png" />
+    <Resource Include="Images\157_GetPermission_32x42_72.png" />
+    <Resource Include="Images\157_GetPermission_48x48_72.png" />
+    <Resource Include="Images\2391_ZoomOut.png" />
+    <Resource Include="Images\2392_ZoomIn_16x16.png" />
+    <Resource Include="Images\2392_ZoomIn_48x48.png" />
+    <Resource Include="Images\305_Close_16x16_72.png" />
+    <Resource Include="Images\305_Close_24x24_72.png" />
+    <Resource Include="Images\305_Close_32x32_72.png" />
+    <Resource Include="Images\305_Close_32x42_72.png" />
+    <Resource Include="Images\305_Close_48x48_72.png" />
+    <Resource Include="Images\327_Options_16x16_72.png" />
+    <Resource Include="Images\327_Options_24x24_72.png" />
+    <Resource Include="Images\327_Options_32x32_72.png" />
+    <Resource Include="Images\327_Options_32x42_72.png" />
+    <Resource Include="Images\327_Options_48x48_72.png" />
+    <Resource Include="Images\browse.png" />
+    <Resource Include="Images\BurnCD_error.png" />
+    <Resource Include="Images\command_link_16x16.png" />
+    <Resource Include="Images\command_link_default.png" />
+    <Resource Include="Images\command_link_disabled.png" />
+    <Resource Include="Images\delete_12x12.png" />
+    <Resource Include="Images\list.txt" />
+    <Resource Include="Images\Multiple_Selection.png" />
+    <Resource Include="Images\New_Folder_Command.png" />
+    <Resource Include="Images\paste_32x32.png" />
+    <Resource Include="Images\replace_folder.png" />
+    <Content Include="Images\_MSActions_png_WinVista - Readme.html" />
+    <Resource Include="Images\005_Task_16x16_72.png" />
+    <Resource Include="Images\005_Task_24x24_72.png" />
+    <Resource Include="Images\005_Task_32x32_72.png" />
+    <Resource Include="Images\005_Task_32x42_72.png" />
+    <Resource Include="Images\005_Task_48x48_72.png" />
+    <Resource Include="Images\008_Reminder_128x128_72.png" />
+    <Resource Include="Images\008_Reminder_16x16_72.png" />
+    <Resource Include="Images\008_Reminder_24x24.png" />
+    <Resource Include="Images\008_Reminder_32x32_72.png" />
+    <Resource Include="Images\008_Reminder_32x42_72.png" />
+    <Resource Include="Images\008_Reminder_48x48_72.png" />
+    <Resource Include="Images\023_Tip_128x128_72.png" />
+    <Resource Include="Images\023_Tip_16x16_72.png" />
+    <Resource Include="Images\023_Tip_24x24_72.png" />
+    <Resource Include="Images\023_Tip_32x32_72.png" />
+    <Resource Include="Images\023_Tip_32x34_72.png" />
+    <Resource Include="Images\023_Tip_32x42_72.png" />
+    <Resource Include="Images\023_Tip_48x48_72.png" />
+    <Resource Include="Images\112_ArrowCurve_Blue_Left_16x16_72.png" />
+    <Resource Include="Images\112_ArrowCurve_Blue_Left_24x24_72.png" />
+    <Resource Include="Images\112_ArrowCurve_Blue_Left_32x32_72.png" />
+    <Resource Include="Images\112_ArrowCurve_Blue_Left_32x42_72.png" />
+    <Resource Include="Images\112_ArrowCurve_Blue_Left_48x48_72.png" />
+    <Resource Include="Images\112_ArrowCurve_Blue_Right_16x16_72.png" />
+    <Resource Include="Images\112_ArrowCurve_Blue_Right_24x24_72.png" />
+    <Resource Include="Images\112_ArrowCurve_Blue_Right_32x32_72.png" />
+    <Resource Include="Images\112_ArrowCurve_Blue_Right_32x42_72.png" />
+    <Resource Include="Images\112_ArrowCurve_Blue_Right_48x48_72.png" />
+    <Resource Include="Images\112_DownArrowLong_Blue_16x16_72.png" />
+    <Resource Include="Images\112_DownArrowLong_Blue_24x24_72.png" />
+    <Resource Include="Images\112_DownArrowLong_Blue_32x32_72.png" />
+    <Resource Include="Images\112_DownArrowLong_Blue_32x42_72.png" />
+    <Resource Include="Images\112_DownArrowLong_Blue_48x48_72.png" />
+    <Resource Include="Images\112_DownArrowLong_Green_16x16_72.png" />
+    <Resource Include="Images\112_DownArrowLong_Green_24x24_72.png" />
+    <Resource Include="Images\112_DownArrowLong_Green_32x32_72.png" />
+    <Resource Include="Images\112_DownArrowLong_Green_32x42_72.png" />
+    <Resource Include="Images\112_DownArrowLong_Green_48x48_72.png" />
+    <Resource Include="Images\112_DownArrowLong_Grey_16x16_72.png" />
+    <Resource Include="Images\112_DownArrowLong_Grey_24x24_72.png" />
+    <Resource Include="Images\112_DownArrowLong_Grey_32x32_72.png" />
+    <Resource Include="Images\112_DownArrowLong_Grey_32x42_72.png" />
+    <Resource Include="Images\112_DownArrowLong_Grey_48x48_72.png" />
+    <Resource Include="Images\112_DownArrowLong_Orange_16x16_72.png" />
+    <Resource Include="Images\112_DownArrowLong_Orange_24x24_72.png" />
+    <Resource Include="Images\112_DownArrowLong_Orange_32x32_72.png" />
+    <Resource Include="Images\112_DownArrowLong_Orange_32x42_72.png" />
+    <Resource Include="Images\112_DownArrowLong_Orange_48x48_72.png" />
+    <Resource Include="Images\112_DownArrowLong_Orange_64x64_72.png" />
+    <Resource Include="Images\112_DownArrowShort_Blue_16x16_72.png" />
+    <Resource Include="Images\112_DownArrowShort_Blue_24x24_72.png" />
+    <Resource Include="Images\112_DownArrowShort_Blue_32x32_72.png" />
+    <Resource Include="Images\112_DownArrowShort_Blue_32x42_72.png" />
+    <Resource Include="Images\112_DownArrowShort_Blue_48x48_72.png" />
+    <Resource Include="Images\112_DownArrowShort_Green_16x16_72.png" />
+    <Resource Include="Images\112_DownArrowShort_Green_24x24_72.png" />
+    <Resource Include="Images\112_DownArrowShort_Green_32x32_72.png" />
+    <Resource Include="Images\112_DownArrowShort_Green_32x42_72.png" />
+    <Resource Include="Images\112_DownArrowShort_Green_48x48_72.png" />
+    <Resource Include="Images\112_DownArrowShort_Grey_16x16_72.png" />
+    <Resource Include="Images\112_DownArrowShort_Grey_24x24_72.png" />
+    <Resource Include="Images\112_DownArrowShort_Grey_32x32_72.png" />
+    <Resource Include="Images\112_DownArrowShort_Grey_32x42_72.png" />
+    <Resource Include="Images\112_DownArrowShort_Grey_48x48_72.png" />
+    <Resource Include="Images\112_DownArrowShort_Orange_16x16_72.png" />
+    <Resource Include="Images\112_DownArrowShort_Orange_24x24_72.png" />
+    <Resource Include="Images\112_DownArrowShort_Orange_32x32_72.png" />
+    <Resource Include="Images\112_DownArrowShort_Orange_32x42_72.png" />
+    <Resource Include="Images\112_DownArrowShort_Orange_48x48_72.png" />
+    <Resource Include="Images\112_LeftArrowLong_Blue_16x16_72.png" />
+    <Resource Include="Images\112_LeftArrowLong_Blue_24x24_72.png" />
+    <Resource Include="Images\112_LeftArrowLong_Blue_32x32_72.png" />
+    <Resource Include="Images\112_LeftArrowLong_Blue_32x42_72.png" />
+    <Resource Include="Images\112_LeftArrowLong_Blue_48x48_72.png" />
+    <Resource Include="Images\112_LeftArrowLong_Green_16x16_72.png" />
+    <Resource Include="Images\112_LeftArrowLong_Green_24x24_72.png" />
+    <Resource Include="Images\112_LeftArrowLong_Green_32x32_72.png" />
+    <Resource Include="Images\112_LeftArrowLong_Green_32x42_72.png" />
+    <Resource Include="Images\112_LeftArrowLong_Grey_16x16_72.png" />
+    <Resource Include="Images\112_LeftArrowLong_Grey_24x24_72.png" />
+    <Resource Include="Images\112_LeftArrowLong_Grey_32x32_72.png" />
+    <Resource Include="Images\112_LeftArrowLong_Grey_32x42_72.png" />
+    <Resource Include="Images\112_LeftArrowLong_Grey_48x48_72.png" />
+    <Resource Include="Images\112_LeftArrowLong_Orange_16x16_72.png" />
+    <Resource Include="Images\112_LeftArrowLong_Orange_24x24_72.png" />
+    <Resource Include="Images\112_LeftArrowLong_Orange_32x32_72.png" />
+    <Resource Include="Images\112_LeftArrowLong_Orange_32x42_72.png" />
+    <Resource Include="Images\112_LeftArrowLong_Orange_48x48_72.png" />
+    <Resource Include="Images\112_LeftArrowShort_Blue_16x16_72.png" />
+    <Resource Include="Images\112_LeftArrowShort_Blue_24x24_72.png" />
+    <Resource Include="Images\112_LeftArrowShort_Blue_32x32_72.png" />
+    <Resource Include="Images\112_LeftArrowShort_Blue_32x42_72.png" />
+    <Resource Include="Images\112_LeftArrowShort_Blue_48x48_72.png" />
+    <Resource Include="Images\112_LeftArrowShort_Green_16x16_72.png" />
+    <Resource Include="Images\112_LeftArrowShort_Green_24x24_72.png" />
+    <Resource Include="Images\112_LeftArrowShort_Green_32x32_72.png" />
+    <Resource Include="Images\112_LeftArrowShort_Green_32x42_72.png" />
+    <Resource Include="Images\112_LeftArrowShort_Green_48x48_72.png" />
+    <Resource Include="Images\112_LeftArrowShort_Grey_16x16_72.png" />
+    <Resource Include="Images\112_LeftArrowShort_Grey_24x24_72.png" />
+    <Resource Include="Images\112_LeftArrowShort_Grey_32x32_72.png" />
+    <Resource Include="Images\112_LeftArrowShort_Grey_32x42_72.png" />
+    <Resource Include="Images\112_LeftArrowShort_Grey_48x48_72.png" />
+    <Resource Include="Images\112_LeftArrowShort_Orange_16x16_72.png" />
+    <Resource Include="Images\112_LeftArrowShort_Orange_24x24_72.png" />
+    <Resource Include="Images\112_LeftArrowShort_Orange_32x32_72.png" />
+    <Resource Include="Images\112_LeftArrowShort_Orange_32x42_72.png" />
+    <Resource Include="Images\112_LeftArrowShort_Orange_48x48_72.png" />
+    <Resource Include="Images\112_Minus_Blue_16x16_72.png" />
+    <Resource Include="Images\112_Minus_Blue_24x24_72.png" />
+    <Resource Include="Images\112_Minus_Blue_32x32_72.png" />
+    <Resource Include="Images\112_Minus_Blue_32x42_72.png" />
+    <Resource Include="Images\112_Minus_Blue_48x48_72.png" />
+    <Resource Include="Images\112_Minus_Green_16x16_72.png" />
+    <Resource Include="Images\112_Minus_Green_24x24_72.png" />
+    <Resource Include="Images\112_Minus_Green_32x32_72.png" />
+    <Resource Include="Images\112_Minus_Green_32x42_72.png" />
+    <Resource Include="Images\112_Minus_Green_48x48_72.png" />
+    <Resource Include="Images\112_Minus_Grey_16x16_72.png" />
+    <Resource Include="Images\112_Minus_Grey_24x24_72.png" />
+    <Resource Include="Images\112_Minus_Grey_32x32_72.png" />
+    <Resource Include="Images\112_Minus_Grey_32x42_72.png" />
+    <Resource Include="Images\112_Minus_Grey_48x48_72.png" />
+    <Resource Include="Images\112_Minus_Orange_16x16_72.png" />
+    <Resource Include="Images\112_Minus_Orange_24x24_72.png" />
+    <Resource Include="Images\112_Minus_Orange_32x32_72.png" />
+    <Resource Include="Images\112_Minus_Orange_32x42_72.png" />
+    <Resource Include="Images\112_Minus_Orange_48x48_72.png" />
+    <Resource Include="Images\112_Plus_Blue_16x16_72.png" />
+    <Resource Include="Images\112_Plus_Blue_24x24_72.png" />
+    <Resource Include="Images\112_Plus_Blue_32x32_72.png" />
+    <Resource Include="Images\112_Plus_Blue_32x42_72.png" />
+    <Resource Include="Images\112_Plus_Blue_48x48_72.png" />
+    <Resource Include="Images\112_Plus_Green_16x16_72.png" />
+    <Resource Include="Images\112_Plus_Green_24x24_72.png" />
+    <Resource Include="Images\112_Plus_Green_32x32_72.png" />
+    <Resource Include="Images\112_Plus_Green_32x42_72.png" />
+    <Resource Include="Images\112_Plus_Green_48x48_72.png" />
+    <Resource Include="Images\112_Plus_Grey_16x16_72.png" />
+    <Resource Include="Images\112_Plus_Grey_24x24_72.png" />
+    <Resource Include="Images\112_Plus_Grey_32x32_72.png" />
+    <Resource Include="Images\112_Plus_Grey_32x42_72.png" />
+    <Resource Include="Images\112_Plus_Grey_48x48_72.png" />
+    <Resource Include="Images\112_Plus_Orange_16x16_72.png" />
+    <Resource Include="Images\112_Plus_Orange_24x24_72.png" />
+    <Resource Include="Images\112_Plus_Orange_32x32_72.png" />
+    <Resource Include="Images\112_Plus_Orange_32x42_72.png" />
+    <Resource Include="Images\112_Plus_Orange_48x48_72.png" />
+    <Resource Include="Images\112_RightArrowLong_Blue_16x16_72.png" />
+    <Resource Include="Images\112_RightArrowLong_Blue_24x24_72.png" />
+    <Resource Include="Images\112_RightArrowLong_Blue_32x32_72.png" />
+    <Resource Include="Images\112_RightArrowLong_Blue_32x42_72.png" />
+    <Resource Include="Images\112_RightArrowLong_Blue_48x48_72.png" />
+    <Resource Include="Images\112_RightArrowLong_Green_16x16_72.png" />
+    <Resource Include="Images\112_RightArrowLong_Green_24x24_72.png" />
+    <Resource Include="Images\112_RightArrowLong_Green_32x32_72.png" />
+    <Resource Include="Images\112_RightArrowLong_Green_32x42_72.png" />
+    <Resource Include="Images\112_RightArrowLong_Green_48x48_72.png" />
+    <Resource Include="Images\112_RightArrowLong_Grey_16x16_72.png" />
+    <Resource Include="Images\112_RightArrowLong_Grey_24x24_72.png" />
+    <Resource Include="Images\112_RightArrowLong_Grey_32x32_72.png" />
+    <Resource Include="Images\112_RightArrowLong_Grey_32x42_72.png" />
+    <Resource Include="Images\112_RightArrowLong_Grey_48x48_72.png" />
+    <Resource Include="Images\112_RightArrowLong_Orange_16x16_72.png" />
+    <Resource Include="Images\112_RightArrowLong_Orange_24x24_72.png" />
+    <Resource Include="Images\112_RightArrowLong_Orange_32x32_72.png" />
+    <Resource Include="Images\112_RightArrowLong_Orange_32x42_72.png" />
+    <Resource Include="Images\112_RightArrowLong_Orange_48x48_72.png" />
+    <Resource Include="Images\112_RightArrowShort_Blue_16x16_72.png" />
+    <Resource Include="Images\112_RightArrowShort_Blue_24x24_72.png" />
+    <Resource Include="Images\112_RightArrowShort_Blue_32x32_72.png" />
+    <Resource Include="Images\112_RightArrowShort_Blue_32x42_72.png" />
+    <Resource Include="Images\112_RightArrowShort_Blue_48x48_72.png" />
+    <Resource Include="Images\112_RightArrowShort_Green_16x16_72.png" />
+    <Resource Include="Images\112_RightArrowShort_Green_24x24_72.png" />
+    <Resource Include="Images\112_RightArrowShort_Green_32x32_72.png" />
+    <Resource Include="Images\112_RightArrowShort_Green_32x42_72.png" />
+    <Resource Include="Images\112_RightArrowShort_Green_48x48_72.png" />
+    <Resource Include="Images\112_RightArrowShort_Grey_16x16_72.png" />
+    <Resource Include="Images\112_RightArrowShort_Grey_24x24_72.png" />
+    <Resource Include="Images\112_RightArrowShort_Grey_32x32_72.png" />
+    <Resource Include="Images\112_RightArrowShort_Grey_32x42_72.png" />
+    <Resource Include="Images\112_RightArrowShort_Grey_48x48_72.png" />
+    <Resource Include="Images\112_RightArrowShort_Orange_16x16_72.png" />
+    <Resource Include="Images\112_RightArrowShort_Orange_24x24_72.png" />
+    <Resource Include="Images\112_RightArrowShort_Orange_32x32_72.png" />
+    <Resource Include="Images\112_RightArrowShort_Orange_32x42_72.png" />
+    <Resource Include="Images\112_RightArrowShort_Orange_48x48_72.png" />
+    <Resource Include="Images\112_UpArrowLong_Blue_16x16_72.png" />
+    <Resource Include="Images\112_UpArrowLong_Blue_24x24_72.png" />
+    <Resource Include="Images\112_UpArrowLong_Blue_32x32_72.png" />
+    <Resource Include="Images\112_UpArrowLong_Blue_32x42_72.png" />
+    <Resource Include="Images\112_UpArrowLong_Blue_48x48_72.png" />
+    <Resource Include="Images\112_UpArrowLong_Green_16x16_72.png" />
+    <Resource Include="Images\112_UpArrowLong_Green_24x24_72.png" />
+    <Resource Include="Images\112_UpArrowLong_Green_32x32_72.png" />
+    <Resource Include="Images\112_UpArrowLong_Green_32x42_72.png" />
+    <Resource Include="Images\112_UpArrowLong_Green_48x48_72.png" />
+    <Resource Include="Images\112_UpArrowLong_Grey_16x16_72.png" />
+    <Resource Include="Images\112_UpArrowLong_Grey_24x24_72.png" />
+    <Resource Include="Images\112_UpArrowLong_Grey_32x32_72.png" />
+    <Resource Include="Images\112_UpArrowLong_Grey_32x42_72.png" />
+    <Resource Include="Images\112_UpArrowLong_Grey_48x48_72.png" />
+    <Resource Include="Images\112_UpArrowLong_Orange_16x16_72.png" />
+    <Resource Include="Images\112_UpArrowLong_Orange_24x24_72.png" />
+    <Resource Include="Images\112_UpArrowLong_Orange_32x32_72.png" />
+    <Resource Include="Images\112_UpArrowLong_Orange_32x42_72.png" />
+    <Resource Include="Images\112_UpArrowLong_Orange_48x48_72.png" />
+    <Resource Include="Images\112_UpArrowShort_Blue_16x16_72.png" />
+    <Resource Include="Images\112_UpArrowShort_Blue_24x24_72.png" />
+    <Resource Include="Images\112_UpArrowShort_Blue_32x32_72.png" />
+    <Resource Include="Images\112_UpArrowShort_Blue_32x42_72.png" />
+    <Resource Include="Images\112_UpArrowShort_Blue_48x48_72.png" />
+    <Resource Include="Images\112_UpArrowShort_Green_16x16_72.png" />
+    <Resource Include="Images\112_UpArrowShort_Green_24x24_72.png" />
+    <Resource Include="Images\112_UpArrowShort_Green_32x32_72.png" />
+    <Resource Include="Images\112_UpArrowShort_Green_32x42_72.png" />
+    <Resource Include="Images\112_UpArrowShort_Green_48x48_72.png" />
+    <Resource Include="Images\112_UpArrowShort_Grey_16x16_72.png" />
+    <Resource Include="Images\112_UpArrowShort_Grey_24x24_72.png" />
+    <Resource Include="Images\112_UpArrowShort_Grey_32x32_72.png" />
+    <Resource Include="Images\112_UpArrowShort_Grey_32x42_72.png" />
+    <Resource Include="Images\112_UpArrowShort_Grey_48x48_72.png" />
+    <Resource Include="Images\112_UpArrowShort_Orange_16x16_72.png" />
+    <Resource Include="Images\112_UpArrowShort_Orange_24x24_72.png" />
+    <Resource Include="Images\112_UpArrowShort_Orange_32x32_72.png" />
+    <Resource Include="Images\112_UpArrowShort_Orange_32x42_72.png" />
+    <Resource Include="Images\112_UpArrowShort_Orange_48x48_72.png" />
+    <Resource Include="Images\138_PushPin_16x16_72.png" />
+    <Resource Include="Images\138_PushPin_24x24_72.png" />
+    <Resource Include="Images\138_PushPin_32x32_72.png" />
+    <Resource Include="Images\138_PushPin_32x42_72.png" />
+    <Resource Include="Images\138_PushPin_48x48_72.png" />
+    <Resource Include="Images\1403_Globe.png" />
+    <Resource Include="Images\1409_Monitor_16x16.png" />
+    <Resource Include="Images\1409_Monitor_24x24.png" />
+    <Resource Include="Images\1409_Monitor_256x256.png" />
+    <Resource Include="Images\1409_Monitor_48x48.png" />
+    <Resource Include="Images\1415_Paintbrush_256x256.png" />
+    <Resource Include="Images\1435_ClipBoard.png" />
+    <Resource Include="Images\1446_envelope_stamp_clsd_32.png" />
+    <Resource Include="Images\1446_envelope_stamp_clsd_48.png" />
+    <Resource Include="Images\1447_eraser_256x256.png" />
+    <Resource Include="Images\1447_eraser_48x48.png" />
+    <Resource Include="Images\1460_PaintPalette_256x256.png" />
+    <Resource Include="Images\1460_PaintPalette_48x48.png" />
+    <Resource Include="Images\1462_Pencil_256x256.png" />
+    <Resource Include="Images\1462_Pencil_48x48.png" />
+    <Resource Include="Images\1474_Tape_256x256.png" />
+    <Resource Include="Images\1474_Tape_48x48.png" />
+    <Resource Include="Images\1475_Text Balloon_256x256.png" />
+    <Resource Include="Images\1475_Text Balloon_48x48.png" />
+    <Resource Include="Images\1496_wall_256x256.png" />
+    <Resource Include="Images\1496_wall_48x48.png" />
+    <Resource Include="Images\1507_ParallelPort_48x48.png" />
+    <Resource Include="Images\1522_stop_watch_48x48.png" />
+    <Resource Include="Images\1532_Flag_system_Blue.png" />
+    <Resource Include="Images\1532_Flag_system_Green.png" />
+    <Resource Include="Images\1532_Flag_system_Purple.png" />
+    <Resource Include="Images\1532_Flag_system_red.png" />
+    <Resource Include="Images\1532_Flag_system_yellow.png" />
+    <Resource Include="Images\1547_ballpointpen.png" />
+    <Resource Include="Images\1549_Paper_clip_blue.png" />
+    <Resource Include="Images\1549_Paper_clip_gray.png" />
+    <Resource Include="Images\1549_Paper_clip_gray_128x128.png" />
+    <Resource Include="Images\1683_Lightbulb_16x16.png" />
+    <Resource Include="Images\1683_Lightbulb_256x256.png" />
+    <Resource Include="Images\1683_Lightbulb_32x32.png" />
+    <Resource Include="Images\1683_Lightbulb_48x48.png" />
+    <Resource Include="Images\2608_GoldLock_10x10.png" />
+    <Resource Include="Images\2608_GoldLock_16x16.png" />
+    <Resource Include="Images\2608_GoldLock_48x48.png" />
+    <Resource Include="Images\3.5_Disk_Drive.png" />
+    <Resource Include="Images\525_DiskDrive.png" />
+    <Resource Include="Images\ActivityReports.png" />
+    <Resource Include="Images\Annotation_New.png" />
+    <Resource Include="Images\AudioCD.png" />
+    <Resource Include="Images\AudioCDPlus.png" />
+    <Resource Include="Images\audiodvd.png" />
+    <Resource Include="Images\AudioFile.png" />
+    <Resource Include="Images\AutoList.png" />
+    <Resource Include="Images\Autoplay.png" />
+    <Resource Include="Images\AutoRun.png" />
+    <Resource Include="Images\batfile.png" />
+    <Resource Include="Images\blank_cd.png" />
+    <Resource Include="Images\Blu-RayMovieDisk.png" />
+    <Resource Include="Images\Book_Green_256x256.png" />
+    <Resource Include="Images\Book_Green_48x48.png" />
+    <Resource Include="Images\Book_Journal_256x256.png" />
+    <Resource Include="Images\Book_Journal_48x48.png" />
+    <Resource Include="Images\BurnCD.png" />
+    <Resource Include="Images\Calculator.png" />
+    <Resource Include="Images\Camera.png" />
+    <Resource Include="Images\CD_Drive.png" />
+    <Resource Include="Images\CD_R.png" />
+    <Resource Include="Images\CD_ROM.png" />
+    <Resource Include="Images\CD_RW.png" />
+    <Resource Include="Images\CD_SV.png" />
+    <Resource Include="Images\CD_V.png" />
+    <Resource Include="Images\cellphone.png" />
+    <Resource Include="Images\cmd.png" />
+    <Resource Include="Images\compactFlash.png" />
+    <Resource Include="Images\Computer.png" />
+    <Resource Include="Images\Connection_Manager.png" />
+    <Resource Include="Images\copy.png" />
+    <Resource Include="Images\CPU.png" />
+    <Resource Include="Images\cut.png" />
+    <Resource Include="Images\Default_Fax.png" />
+    <Resource Include="Images\delete.png" />
+    <Resource Include="Images\Dialup.png" />
+    <Resource Include="Images\DisconnectedDrive.png" />
+    <Resource Include="Images\DVD-RAM.png" />
+    <Resource Include="Images\DVD-RW.png" />
+    <Resource Include="Images\DVD.png" />
+    <Resource Include="Images\dvddrive.png" />
+    <Resource Include="Images\DVDplusR.png" />
+    <Resource Include="Images\DVD_R.png" />
+    <Resource Include="Images\DVD_ROM.png" />
+    <Resource Include="Images\emd.png" />
+    <Resource Include="Images\EmptyCD.png" />
+    <Resource Include="Images\EmptyDrive.png" />
+    <Resource Include="Images\EnhancedAudioCD.png" />
+    <Resource Include="Images\EnhancedDVD.png" />
+    <Resource Include="Images\error.png" />
+    <Resource Include="Images\Favorites.png" />
+    <Resource Include="Images\FavoriteStar_16x16.png" />
+    <Resource Include="Images\FavoriteStar_48x48.png" />
+    <Resource Include="Images\FavoriteStar_FrontFacing_16x16_72.png" />
+    <Resource Include="Images\FavoriteStar_FrontFacing_24x24_72.png" />
+    <Resource Include="Images\FavoriteStar_FrontFacing_32x32_72.png" />
+    <Resource Include="Images\FavoriteStar_FrontFacing_32x42_72.png" />
+    <Resource Include="Images\FavoriteStar_FrontFacing_48x48_72.png" />
+    <Resource Include="Images\Fax.png" />
+    <Resource Include="Images\File_Printer.png" />
+    <Resource Include="Images\FloppyDisk.png" />
+    <Resource Include="Images\FolderOpen_16x16_72.png" />
+    <Resource Include="Images\FolderOpen_24x24_72.png" />
+    <Resource Include="Images\FolderOpen_32x32_72.png" />
+    <Resource Include="Images\FolderOpen_32x42_72.png" />
+    <Resource Include="Images\FolderOpen_48x48_72.png" />
+    <Resource Include="Images\Folder_16x16.png" />
+    <Resource Include="Images\Folder_256x256.png" />
+    <Resource Include="Images\Folder_32x32.png" />
+    <Resource Include="Images\Folder_48x48.png" />
+    <Resource Include="Images\Folder_Closed.png" />
+    <Resource Include="Images\Folder_Open.png" />
+    <Resource Include="Images\font.png" />
+    <Resource Include="Images\gamecontroller.png" />
+    <Resource Include="Images\Gear.png" />
+    <Resource Include="Images\GenericMovieClip.png" />
+    <Resource Include="Images\Generic_Application.png" />
+    <Resource Include="Images\Generic_Device.png" />
+    <Resource Include="Images\Generic_Document.png" />
+    <Resource Include="Images\generic_picture.png" />
+    <Resource Include="Images\GenVideoDoc_16x16_72.png" />
+    <Resource Include="Images\GenVideoDoc_32x32_72.png" />
+    <Resource Include="Images\Hard_Drive.png" />
+    <Resource Include="Images\hddvdmovie.png" />
+    <Resource Include="Images\help.png" />
+    <Resource Include="Images\history.png" />
+    <Resource Include="Images\Image_File.png" />
+    <Resource Include="Images\info.png" />
+    <Resource Include="Images\Journal.png" />
+    <Resource Include="Images\Key.png" />
+    <Resource Include="Images\Keyboard.png" />
+    <Resource Include="Images\Keys.png" />
+    <Resource Include="Images\Key_Left.png" />
+    <Resource Include="Images\Key_Right.png" />
+    <Resource Include="Images\Laptop.png" />
+    <Resource Include="Images\Likely_unavail.png" />
+    <Resource Include="Images\MixedMediaFile.png" />
+    <Resource Include="Images\Mouse.png" />
+    <Resource Include="Images\Move.png" />
+    <Resource Include="Images\Music_Note_Double_16.png" />
+    <Resource Include="Images\Music_Note_Double_24.png" />
+    <Resource Include="Images\Music_Note_Double_48.png" />
+    <Resource Include="Images\Music_Note_Double_75x74 png for sidebar app.png" />
+    <Resource Include="Images\Music_Note_Single_16.png" />
+    <Resource Include="Images\Music_Note_Single_24.png" />
+    <Resource Include="Images\Music_Note_Single_48.png" />
+    <Resource Include="Images\mynet.png" />
+    <Resource Include="Images\Network.png" />
+    <Resource Include="Images\Network_Center.png" />
+    <Resource Include="Images\Network_ConnectTo.png" />
+    <Resource Include="Images\Network_Drive.png" />
+    <Resource Include="Images\Network_Fax.png" />
+    <Resource Include="Images\Network_Fax_Default.png" />
+    <Resource Include="Images\Network_Folder.png" />
+    <Resource Include="Images\Network_Internet.png" />
+    <Resource Include="Images\Network_Map.png" />
+    <Resource Include="Images\Network_Printer.png" />
+    <Resource Include="Images\paste.png" />
+    <Resource Include="Images\personalization.png" />
+    <Resource Include="Images\Portable_Media_Devices.png" />
+    <Resource Include="Images\preferences.png" />
+    <Resource Include="Images\Printer.png" />
+    <Resource Include="Images\ram.png" />
+    <Resource Include="Images\Rename.png" />
+    <Resource Include="Images\Replace.png" />
+    <Resource Include="Images\search.png" />
+    <Resource Include="Images\search_glyph.png" />
+    <Resource Include="Images\SecurityLock.png" />
+    <Resource Include="Images\Settings.png" />
+    <Resource Include="Images\settings_16.png" />
+    <Resource Include="Images\settings_32.png" />
+    <Resource Include="Images\settings_48.png" />
+    <Resource Include="Images\Setup_Install.png" />
+    <Resource Include="Images\share_overlay.png" />
+    <Resource Include="Images\Shortcut.png" />
+    <Resource Include="Images\smartmedia.png" />
+    <Resource Include="Images\Stuffed_Folder.png" />
+    <Resource Include="Images\UnknownDrive.png" />
+    <Resource Include="Images\Users.png" />
+    <Resource Include="Images\VideoCamera.png" />
+    <Resource Include="Images\VPN.png" />
+    <Resource Include="Images\Warning.png" />
+    <Resource Include="Images\XAML_file.png" />
+    <Resource Include="Images\zippedFile.png" />
+    <Content Include="Images\_MSObjects_png_WinVista - Readme.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <PublishFile Include="Microsoft.Office.Interop.Excel">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Microsoft.Vbe.Interop">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="office">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="stdole">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

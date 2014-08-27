@@ -1,0 +1,26 @@
+﻿<Page x:Class="Trust.Reports"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d" 
+	Title="Reports" HorizontalAlignment="Center" xmlns:my="clr-namespace:ExtendedGrid.ExtendedGridControl;assembly=ExtendedGrid" Height="640">
+    <ScrollViewer  HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="auto"  VerticalContentAlignment="Stretch" HorizontalContentAlignment="Stretch" Margin="0,0,0,44">
+        <Grid Height="auto" Width="auto">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="20*"/>
+                <ColumnDefinition Width="1137*"/>
+            </Grid.ColumnDefinitions>
+            <my:ExtendedDataGrid HideColumnChooser="False"  CanUserReorderRows="True" CanUserReorderColumns="True" IsReadOnly="True" Height="440" AutoGenerateColumns="True" HorizontalAlignment="Left" Margin="2,106,0,0" x:Name="extendedDataGrid1" VerticalAlignment="Top" Width="1120" Grid.Column="1" SelectionChanged="extendedDataGrid1_SelectionChanged" />
+            <Button Content="Export To Excel" x:Name="butBrowse_Copy" HorizontalAlignment="Left" Margin="1000,551,0,0" VerticalAlignment="Top" Width="126" Height="24" Click="butBrowse_Click" Grid.Column="1"/>
+            <Label Content="Show me:" HorizontalAlignment="Left" Margin="2.5,23,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+            <RadioButton Name="radPO" IsChecked="True"  Content="Purchase Orders" GroupName="type" HorizontalAlignment="Left" Margin="68.5,29,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.085,0.367" Grid.Column="1"/>
+            <RadioButton Name="radInv" Content="Invoices" GroupName="type" HorizontalAlignment="Left" Margin="192,29,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+            <Label Content="That are:" HorizontalAlignment="Left" Margin="2,48,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+            <RadioButton Name="radUnmatched" IsChecked="True" Content="Unmatched" GroupName="matched" HorizontalAlignment="Left" Margin="68,54,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.085,0.367" Grid.Column="1"/>
+            <RadioButton Name="radMatched" Content="Matched" GroupName="matched" HorizontalAlignment="Left" Margin="380,54,0,0" VerticalAlignment="Top" Grid.Column="1" RenderTransformOrigin="0.904,0.38"/>
+            <Button Content="Get Data" Grid.Column="1" HorizontalAlignment="Left" Margin="183,74,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
+            <RadioButton x:Name="radUnmatched_inc_credit"  Content="Unmatched inc credits/hidden" GroupName="matched" HorizontalAlignment="Left" Margin="192,54,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.085,0.367" Grid.Column="1"/>
+        </Grid>
+    </ScrollViewer>
+</Page>
